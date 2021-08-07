@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import InfoCard from "../components/InfoCard";
 import Map from "../components/Map";
+import Scroll from "../components/Scroll";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -26,7 +27,7 @@ function Search({ searchResults }) {
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
           </h1>
-          <div className="hidden md:inline-flex mb-5 space-x-3 flex-nowrap text-gray-800">
+          <div className="hidden xl:inline-flex mb-5 space-x-3 flex-nowrap text-gray-800">
             <p className="button">Cancellation Flexiblirity</p>
             <p className="button">Tyle of Place</p>
             <p className="button">Price</p>
@@ -50,12 +51,13 @@ function Search({ searchResults }) {
             )}
           </div>
         </section>
-        <section className="hidden sm:inline-flex sm:min-w-[300px] xl:inline-flex xl:min-w-[600px]">
+        <section className="hidden sm:inline-flex sm:w-[300px] xl:min-w-[600px]">
           <Map searchResults={searchResults} />
         </section>
       </main>
 
       <Footer />
+      {/* <Scroll /> */}
     </div>
   );
 }

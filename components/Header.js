@@ -49,9 +49,11 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
+    <header className="sticky top-0 z-50 grid grid-cols-3 bg-gradient-to-r from-green-100 to-blue-300  shadow-md p-5 md:px-10 bg-transparent">
       <div
-        onClick={() => router.push("/")}
+        onClick={() => {
+          router.push("/");
+        }}
         className="relative flex items-center h-10 cursor-pointer my-auto"
       >
         <Image
@@ -62,7 +64,7 @@ function Header({ placeholder }) {
         />
       </div>
 
-      <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
+      <div className="flex border-b-2 items-center md:border-2 md:rounded-full py-2 md:shadow-sm border-red-500">
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -86,7 +88,7 @@ function Header({ placeholder }) {
         </div>
       </div>
       {searchInput && (
-        <div className="flex flex-col col-span-3 mx-auto mt-3">
+        <div className="flex flex-col col-span-3 mx-auto mt-3 ">
           <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}
@@ -104,15 +106,21 @@ function Header({ placeholder }) {
               onChange={(e) => setNoOfGuests(e.target.value)}
               type="number"
               min={1}
-              className="w-12 outline-none text-red-400 pl-2"
+              className="w-12 outline-none text-red-400 pl-2 bg-transparent"
             />
           </div>
 
-          <div className="flex">
-            <button onClick={resetInput} className="flex-grow text-gray-500">
+          <div className="flex mx-20 h-10">
+            <button
+              onClick={resetInput}
+              className="flex-grow text-gray-500 hover:bg-red-300 rounded-3xl"
+            >
               Cancel
             </button>
-            <button onClick={search} className="flex-grow text-red-400">
+            <button
+              onClick={search}
+              className="flex-grow text-red-400 hover:bg-blue-300 rounded-full"
+            >
               Search
             </button>
           </div>
