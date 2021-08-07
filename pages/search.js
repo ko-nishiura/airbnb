@@ -51,13 +51,13 @@ function Search({ searchResults }) {
             )}
           </div>
         </section>
-        <section className="hidden sm:inline-flex sm:w-[300px] xl:min-w-[600px]">
+        <section className="hidden md:inline-flex md:w-[300px] max-h-full xl:inline-flex xl:min-w-[500px]">
           <Map searchResults={searchResults} />
         </section>
       </main>
 
       <Footer />
-      {/* <Scroll /> */}
+      <Scroll />
     </div>
   );
 }
