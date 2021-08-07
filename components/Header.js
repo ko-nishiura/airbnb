@@ -32,7 +32,7 @@ function Header({ placeholder }) {
   };
 
   const resetInput = () => {
-    setSearchInput("");
+    setSearchInput("/map");
   };
 
   const search = () => {
@@ -49,7 +49,7 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-gradient-to-r from-green-100 to-blue-300  shadow-md p-5 md:px-10 bg-transparent">
+    <header className="sticky top-0 z-50 grid grid-cols-3 bg-gradient-to-r from-green-100 to-blue-200  shadow-md p-5 md:px-10 bg-transparent ">
       <div
         onClick={() => {
           router.push("/");
@@ -64,11 +64,11 @@ function Header({ placeholder }) {
         />
       </div>
 
-      <div className="flex border-b-2 items-center md:border-2 md:rounded-full py-2 md:shadow-sm border-red-500">
+      <div className="flex  items-center md:border-2 md:rounded-full py-2 md:shadow-sm border-red-500 mr-2">
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className="flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400"
+          className="flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400 border-b-2 border-red-500 md:border-0"
           type="text"
           placeholder={placeholder || "Start your search"}
         />
@@ -79,10 +79,12 @@ function Header({ placeholder }) {
       </div>
 
       {/* Right */}
-      <div className="flex items-center space-x-4 justify-end text-gray-500">
-        <p className="hidden md:inline cursor-pointer ">Become a host</p>
-        <GlobeAltIcon className="h-6" />
-        <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
+      <div className="flex items-center space-x-2 justify-end text-gray-900">
+        <p className="hidden md:inline cursor-pointer p-3 hover:bg-gray-100 rounded-full ">
+          Become a host
+        </p>
+        <GlobeAltIcon className="h-9 p-2 hover:bg-gray-100  rounded-full cursor-pointer" />
+        <div className="flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer hover:shadow-lg ">
           <MenuIcon className="h-6" />
           <UserCircleIcon className="h-6" />
         </div>
@@ -106,20 +108,20 @@ function Header({ placeholder }) {
               onChange={(e) => setNoOfGuests(e.target.value)}
               type="number"
               min={1}
-              className="w-12 outline-none text-red-400 pl-2 bg-transparent"
+              className="w-12 outline-none text-red-600 pl-2 bg-transparent"
             />
           </div>
 
           <div className="flex mx-20 h-10">
             <button
               onClick={resetInput}
-              className="flex-grow text-gray-500 hover:bg-red-300 rounded-3xl"
+              className="flex-grow mr-1 text-gray-700 border-2 hover:bg-blue-300 rounded-3xl hover:text-white"
             >
               Cancel
             </button>
             <button
               onClick={search}
-              className="flex-grow text-red-400 hover:bg-blue-300 rounded-full"
+              className="flex-grow text-red-600 border-2  hover:bg-red-300 rounded-full hover:text-white"
             >
               Search
             </button>

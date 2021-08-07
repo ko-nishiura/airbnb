@@ -8,6 +8,7 @@ import Scroll from "../components/Scroll";
 
 function Search({ searchResults }) {
   const router = useRouter();
+  // let clickeds = false;
 
   const { location, startDate, endDate, noOdGuests } = router.query;
 
@@ -17,16 +18,19 @@ function Search({ searchResults }) {
 
   return (
     <div>
-      <Header placeholder={`${location} | ${range} | ${noOdGuests} guest`} />
-
+      <Header placeholder={`${location} | ${range} | ${noOdGuests} guest`} />(
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
-            300+ Stays - {range} - for {noOdGuests} number of guests
+            300+ Stays -{" "}
+            <span className="border-b-2 border-gray-400">{range}</span> - for{" "}
+            {noOdGuests} number of guests
           </p>
+
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
           </h1>
+
           <div className="hidden xl:inline-flex mb-5 space-x-3 flex-nowrap text-gray-800">
             <p className="button">Cancellation Flexiblirity</p>
             <p className="button">Tyle of Place</p>
@@ -51,11 +55,10 @@ function Search({ searchResults }) {
             )}
           </div>
         </section>
-        <section className="hidden md:inline-flex md:w-[300px] max-h-full xl:inline-flex xl:min-w-[500px]">
+        <section className="hidden xl:block xl:min-w-[500px] right-0 ">
           <Map searchResults={searchResults} />
         </section>
       </main>
-
       <Footer />
       <Scroll />
     </div>

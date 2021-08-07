@@ -7,6 +7,7 @@ function Banner() {
         src="https://source.unsplash.com/iXqTqC-f6jI"
         layout="fill"
         objectFit="cover"
+        className="pointer-events-none"
       />
       <div className="absolute top-1/2 w-full text-center">
         <p className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white ">
