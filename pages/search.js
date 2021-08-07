@@ -18,19 +18,17 @@ function Search({ searchResults }) {
 
   return (
     <div>
-      <Header placeholder={`${location} | ${range} | ${noOdGuests} guest`} />(
+      <Header placeholder={`${location} | ${range} | ${noOdGuests} guest`} />
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
-            300+ Stays -{" "}
-            <span className="border-b-2 border-gray-400">{range}</span> - for{" "}
+            300+ Stays -
+            <span className="border-b-2 border-gray-400">{range}</span> - for
             {noOdGuests} number of guests
           </p>
-
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
           </h1>
-
           <div className="hidden xl:inline-flex mb-5 space-x-3 flex-nowrap text-gray-800">
             <p className="button">Cancellation Flexiblirity</p>
             <p className="button">Tyle of Place</p>
